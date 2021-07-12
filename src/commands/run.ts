@@ -23,7 +23,7 @@ export default class Run extends Command {
     const [ cwd, config ] = await openBaseDir(this, args.baseFolder ?? '.');
 
     let tasks: string[] = [
-      `docker run --rm -e MINIO_ROOT_USER=minioautumn -e MINIO_ROOT_PASSWORD=minioautumn -p 9050:9050 -v "${cwd}/data/minio:/data" minio/minio server /data`,
+      `docker run --rm -e MINIO_ROOT_USER=minioautumn -e MINIO_ROOT_PASSWORD=minioautumn -p 9050:9000 -v "${cwd}/data/minio:/data" minio/minio server /data`,
       `docker run --rm -p 27017:27017 -v "${cwd}/data/mongodb:/data/db" mongo`
     ];
 
