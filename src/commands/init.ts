@@ -23,8 +23,8 @@ const workspace = {
 			"path": "revolt.js"
 		},
 		{
-			"name": "delta",
-			"path": "delta"
+			"name": "server",
+			"path": "server"
 		},
 		{
 			"name": "january",
