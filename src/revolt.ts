@@ -25,6 +25,7 @@ export async function openBaseDir(command: Command, dir?: string): Promise<[ str
 
         throw "Could not find / read .revolt configuration.";
     } catch (err) {
-        command.error(err);
+        command.error(err as any);
+        throw "";
     }
 }

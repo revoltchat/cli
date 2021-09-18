@@ -19,7 +19,7 @@ $ npm install -g revolt-stack
 $ revolt COMMAND
 running command...
 $ revolt (-v|--version|version)
-revolt-stack/0.1.2 linux-x64 node-v15.14.0
+revolt-stack/0.1.3 linux-x64 node-v14.17.3
 $ revolt --help [COMMAND]
 USAGE
   $ revolt COMMAND
@@ -28,11 +28,44 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`revolt admin:test`](#revolt-admintest)
+* [`revolt admin:user:delete [ID]`](#revolt-adminuserdelete-id)
+* [`revolt admin:user:edit [ID]`](#revolt-adminuseredit-id)
 * [`revolt build [BASEFOLDER]`](#revolt-build-basefolder)
 * [`revolt env [BASEFOLDER]`](#revolt-env-basefolder)
 * [`revolt help [COMMAND]`](#revolt-help-command)
 * [`revolt init [FOLDER]`](#revolt-init-folder)
 * [`revolt run [BASEFOLDER]`](#revolt-run-basefolder)
+
+## `revolt admin:test`
+
+Verify Revolt is configured.
+
+```
+USAGE
+  $ revolt admin:test
+```
+
+## `revolt admin:user:delete [ID]`
+
+Delete a user.
+
+```
+USAGE
+  $ revolt admin:user:delete [ID]
+
+OPTIONS
+  -e, --email  Take argument as email.
+```
+
+## `revolt admin:user:edit [ID]`
+
+Edit user information.
+
+```
+USAGE
+  $ revolt admin:user:edit [ID]
+```
 
 ## `revolt build [BASEFOLDER]`
 

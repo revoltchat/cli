@@ -4,7 +4,7 @@ import { openBaseDir } from '../revolt';
 import { resolve } from 'path';
 import axios from 'axios';
 
-const EXAMPLE_ENV = 'https://gitlab.insrt.uk/revolt/self-hosted/-/raw/master/.env.example';
+const EXAMPLE_ENV = 'https://raw.githubusercontent.com/revoltchat/self-hosted/master/.env.example';
 
 const paths: { [key: string]: string } = {
   'delta': '.env',

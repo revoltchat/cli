@@ -4,12 +4,12 @@ import { resolve } from 'path';
 import sgit from 'simple-git';
 
 const projects = {
-  client: 'https://gitlab.insrt.uk/revolt/revite.git',
-  'revolt.js': 'https://gitlab.insrt.uk/revolt/revolt.js.git',
-  server: 'https://gitlab.insrt.uk/revolt/delta.git',
-  autumn: 'https://gitlab.insrt.uk/revolt/autumn.git',
-  january: 'https://gitlab.insrt.uk/revolt/january.git',
-  rauth: 'https://gitlab.insrt.uk/insert/rauth.git',
+  client: 'https://github.com/revoltchat/revite.git',
+  'revolt.js': 'https://github.com/revoltchat/revolt.js.git',
+  server: 'https://github.com/revoltchat/delta.git',
+  autumn: 'https://github.com/revoltchat/autumn.git',
+  january: 'https://github.com/revoltchat/january.git',
+  rauth: 'https://github.com/insertish/rauth.git',
 }
 
 const workspace = {
