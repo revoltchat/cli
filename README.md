@@ -19,7 +19,7 @@ $ npm install -g revolt-stack
 $ revolt COMMAND
 running command...
 $ revolt (-v|--version|version)
-revolt-stack/0.1.3 linux-x64 node-v14.17.3
+revolt-stack/0.1.4 linux-x64 node-v14.17.3
 $ revolt --help [COMMAND]
 USAGE
   $ revolt COMMAND
@@ -55,7 +55,8 @@ USAGE
   $ revolt admin:user:delete [ID]
 
 OPTIONS
-  -e, --email  Take argument as email.
+  -e, --email     Take argument as email.
+  -m, --messages  Delete all of user's messages.
 ```
 
 ## `revolt admin:user:edit [ID]`

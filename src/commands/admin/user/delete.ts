@@ -7,6 +7,7 @@ export default class DeleteUser extends Command {
 
   static flags = {
     email: flags.boolean({char: 'e', description: 'Take argument as email.'}),
+    messages: flags.boolean({char: 'm', description: 'Delete all of user\'s messages.'}),
   }
 
   static args = [{name: 'id'}]
@@ -31,6 +32,15 @@ export default class DeleteUser extends Command {
 
         if (!account) this.error("Email not found!");
         _id = account._id;
+    } else {
+        const account = await client
+            .db('revolt')
+            .collection('accounts')
+            .findOne(
+                { _id }
+            );
+        
+        console.log(account);
     }
 
     const user = await client
@@ -60,6 +70,28 @@ export default class DeleteUser extends Command {
 
     console.log('Active Sessions:', sessions);
     console.log(`Will deactivate ${sessions.length} sessions.`);
+
+    const count = await client
+        .db('revolt')
+        .collection('messages')
+        .find({ author: _id })
+        .count();
+
+    response = await prompts({
+        type: 'toggle',
+        name: 'confirm',
+        message: `Confirm deleting ${count} messages.`,
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
+    });
+
+    if (!response.confirm) return client.close();
+
+    await client
+        .db('revolt')
+        .collection('messages')
+        .deleteMany({ author: _id });
 
     response = await prompts({
         type: 'toggle',
