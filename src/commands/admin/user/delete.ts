@@ -62,6 +62,30 @@ export default class DeleteUser extends Command {
 
     if (!response.confirm) return client.close();
 
+    if (flags.messages) {
+        const count = await client
+            .db('revolt')
+            .collection('messages')
+            .find({ author: _id })
+            .count();
+
+        response = await prompts({
+            type: 'toggle',
+            name: 'confirm',
+            message: `Confirm deleting ${count} messages.`,
+            initial: false,
+            active: 'Yes',
+            inactive: 'No'
+        });
+
+        if (!response.confirm) return client.close();
+
+        await client
+            .db('revolt')
+            .collection('messages')
+            .deleteMany({ author: _id });
+    }
+
     const sessions = await client
         .db('revolt')
         .collection('sessions')
@@ -70,28 +94,6 @@ export default class DeleteUser extends Command {
 
     console.log('Active Sessions:', sessions);
     console.log(`Will deactivate ${sessions.length} sessions.`);
-
-    const count = await client
-        .db('revolt')
-        .collection('messages')
-        .find({ author: _id })
-        .count();
-
-    response = await prompts({
-        type: 'toggle',
-        name: 'confirm',
-        message: `Confirm deleting ${count} messages.`,
-        initial: false,
-        active: 'Yes',
-        inactive: 'No'
-    });
-
-    if (!response.confirm) return client.close();
-
-    await client
-        .db('revolt')
-        .collection('messages')
-        .deleteMany({ author: _id });
 
     response = await prompts({
         type: 'toggle',
