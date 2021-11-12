@@ -1,7 +1,7 @@
 {
   "name": "revolt-stack",
   "description": "CLI for working with the Revolt stack.",
-  "version": "0.1.4-patch.0",
+  "version": "0.1.5",
   "author": "Paul Makles <insrt.uk>",
   "bin": {
     "revolt": "./bin/run"
