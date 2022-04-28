@@ -19,7 +19,7 @@ $ npm install -g revolt-stack
 $ revolt COMMAND
 running command...
 $ revolt (-v|--version|version)
-revolt-stack/0.1.5 linux-x64 node-v14.17.3
+revolt-stack/0.1.5 linux-x64 node-v17.6.0
 $ revolt --help [COMMAND]
 USAGE
   $ revolt COMMAND

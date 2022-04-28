@@ -8,6 +8,7 @@ const commands: { [key: string]: string } = {
   'server': 'cargo build --bin revolt',
   'autumn': 'cargo build',
   'january': 'cargo build',
+  'bonfire': 'cargo build'
 }
 
 export default class Build extends Command {
