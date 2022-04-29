@@ -11,6 +11,7 @@ const paths: { [key: string]: string } = {
   'client': '.env.local',
   'autumn': '.env',
   'january': '.env',
+  'bonfire': '.env'
 }
 
 export default class Env extends Command {

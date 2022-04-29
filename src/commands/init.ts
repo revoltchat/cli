@@ -10,6 +10,7 @@ const projects = {
   autumn: 'https://github.com/revoltchat/autumn.git',
   january: 'https://github.com/revoltchat/january.git',
   rauth: 'https://github.com/insertish/rauth.git',
+  bonfire: 'https://github.com/revoltchat/bonfire',
 }
 
 const workspace = {
@@ -37,7 +38,11 @@ const workspace = {
 		{
 			"name": "rauth",
 			"path": "rauth"
-		}
+		},
+    {
+      "name": "bonfire",
+      "path": "bonfire"
+    }
 	]
 }
 

@@ -7,6 +7,7 @@ const commands: { [key: string]: string } = {
   'server': 'REVOLT_MONGO_URI=mongodb://localhost REVOLT_REDIS_URI=redis://localhost/ ROCKET_ADDRESS=0.0.0.0 cargo run --bin revolt',
   'autumn': 'AUTUMN_S3_ENDPOINT=http://localhost:9050 AUTUMN_HOST=0.0.0.0:3000 AUTUMN_MONGO_URI=mongodb://localhost cargo run',
   'january': 'cargo run',
+  'bonfire': 'sleep 3 && cargo run' // bonfire panics if keydb isn't available
 }
 
 export default class Run extends Command {
